@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laboratory Hero Section</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header Section -->
+  <header class="header">
+    <div class="container">
+      <!-- Logo -->
+      <div class="logo">
+        <img src="https://img.icons8.com/color/48/laboratory.png" alt="Lab Logo">
+        <h1>LabTech</h1>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="navbar">
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#add-patient">Add Patient</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- CTA Button -->
+      <div class="cta">
+        <a href="#get-started" class="cta-btn">Get Started</a>
+      </div>
+    </div>
+  </header> 
+
+
+  <div class="hero-section">
+    <!-- Background Shapes -->
+    <div class="background-overlay"></div>
+    <div class="background-shape"></div>
+    
+    <!-- Content Area -->
+    <div class="hero-content">
+      <h1 class="hero-title">Elevate Your Laboratory Services</h1>
+      <p class="hero-description">
+        Manage patients efficiently, generate accurate blood reports, and share results instantly with our smart tools.
+      </p>
+      <div class="hero-buttons">
+        <a href="#" class="btn btn-primary">Add Patient</a>
+        <a href="#features" class="btn btn-secondary">Learn More</a>
+      </div>
+    </div>
+
+    <!-- Feature Icons -->
+    <div class="hero-features">
+        <div class="feature-item">
+            <img src="https://img.icons8.com/clouds/100/000000/medical-doctor.png" alt="Patient" class="feature-icon">
+            <p>Quick Patient Management</p>
+          </div>
+           <!-- Feature card that opens the popup -->
+    <div class="feature-item" onclick="openPopup()">
+      <img src="https://img.icons8.com/clouds/100/000000/document.png" alt="Report" class="feature-icon">
+      <p>Automated Report Generation</p>
+  </div>
+          <div class="feature-item">
+            <img src="https://img.icons8.com/clouds/100/000000/whatsapp.png" alt="WhatsApp" class="feature-icon">
+            <p>Send Reports via WhatsApp</p>
+          </div>
+    </div>
+  </div>
+
+  <section class="features-section">
+    <div class="container">
+        <h2 class="section-title">Our Key Features</h2>
+        <div class="features">
+            <div class="feature-card">
+                <img src="https://img.icons8.com/ios/50/ffffff/out-patient-department.png" alt="Add Patient" class="feature-icon">
+                <h3 class="feature-title">Add Patients Easily</h3>
+                <p class="feature-description">Quickly add and manage patient details in a streamlined system.</p>
+            </div>
+            <div class="feature-card" onclick="openPopup()">
+                <img src="https://img.icons8.com/ios/50/ffffff/health-graph.png" alt="Generate Report" class="feature-icon">
+                <h3 class="feature-title">Generate Accurate Reports</h3>
+                <p class="feature-description">Automate blood report generation with precise data processing.</p>
+            </div>
+            <div class="feature-card">
+                <img src="https://img.icons8.com/ios/50/ffffff/whatsapp.png" alt="Send Reports" class="feature-icon">
+                <h3 class="feature-title">Share Reports via WhatsApp</h3>
+                <p class="feature-description">Send results directly to patients' WhatsApp with ease.</p>
+            </div>
+        </div>
+    </div>
+</section> 
+
+<!-- The Popup Form -->
+<div id="popupBox" class="popup-box">
+  <div class="popup-content">
+      <span style="color: crimson;" class="close-btn" onclick="closePopup()">&times;</span>
+      <h2>Patient Report Details</h2>
+      <form class="report-form" onsubmit="submitForm(event)">
+          <div class="form-row">
+              <label for="patientName">Patient Name:</label>
+              <input type="text" id="patientName" name="patientName" required>
+
+              <label for="age">Age:</label>
+              <input type="number" id="age" name="age" required>
+
+              <label for="gender">Gender:</label>
+              <select id="gender" name="gender" required>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Other">Other</option>
+              </select>
+          </div>
+
+          <div class="form-row">
+              <label for="refBy">Referred By:</label>
+              <input type="text" id="refBy" name="refBy" required>
+
+              <label for="regOn">Registration Date:</label>
+              <input type="date" id="regOn" name="regOn" required>
+
+              <label for="uhid">UHID:</label>
+              <input type="number" id="uhid" name="uhid" required>
+          </div>
+
+          <div class="form-row">
+              <label for="investigation">Investigation:</label>
+              <input type="text" id="investigation" name="investigation" required>
+
+              <label for="registeredOn">Registered On:</label>
+              <input type="date" id="registeredOn" name="registeredOn" required>
+
+              <label for="collectedOn">Collected On:</label>
+              <input type="date" id="collectedOn" name="collectedOn" required>
+          </div>
+
+          <div class="form-row">
+              <label for="receivedOn">Received On:</label>
+              <input type="date" id="receivedOn" name="receivedOn" required>
+
+              <label for="reportedOn">Reported On:</label>
+              <input type="date" id="reportedOn" name="reportedOn" required>
+
+              <label for="hemoglobin">Hemoglobin:</label>
+              <input type="number" id="hemoglobin" name="hemoglobin" required>
+          </div>
+
+          <div class="form-row">
+              <label for="leukocyte">Leukocyte:</label>
+              <input type="number" id="leukocyte" name="leukocyte" required>
+
+              <label for="neutrophils">Neutrophils:</label>
+              <input type="number" id="neutrophils" name="neutrophils" required>
+
+              <label for="lymphocyte">Lymphocyte:</label>
+              <input type="number" id="lymphocyte" name="lymphocyte" required>
+          </div>
+
+          <div class="form-row">
+              <label for="eosinophils">Eosinophils:</label>
+              <input type="number" id="eosinophils" name="eosinophils" required>
+
+              <label for="monocytes">Monocytes:</label>
+              <input type="number" id="monocytes" name="monocytes" required>
+
+              <label for="basophils">Basophils:</label>
+              <input type="number" id="basophils" name="basophils" required>
+          </div>
+
+          <div class="form-row">
+              <label for="platelet">Platelet:</label>
+              <input type="number" id="platelet" name="platelet" required>
+
+              <label for="rbc">RBC:</label>
+              <input type="number" id="rbc" name="rbc" required>
+
+              <label for="hct">HCT:</label>
+              <input type="number" id="hct" name="hct" required>
+          </div>
+
+          <div class="form-row">
+              <label for="mcv">MCV:</label>
+              <input type="number" id="mcv" name="mcv" required>
+
+              <label for="mch">MCH:</label>
+              <input type="number" id="mch" name="mch" required>
+
+              <label for="mchc">MCHC:</label>
+              <input type="number" id="mchc" name="mchc" required>
+          </div>
+
+          <div class="form-row">
+              <label for="mpv">MPV:</label>
+              <input type="number" id="mpv" name="mpv" required>
+
+              <label for="sd">SD:</label>
+              <input type="number" id="sd" name="sd" required>
+
+              <label for="cv">CV:</label>
+              <input type="number" id="cv" name="cv" required>
+          </div>
+
+          <div class="form-row">
+              <label for="lcr">LCR:</label>
+              <input type="number" id="lcr" name="lcr" required>
+
+              <label for="pdw">PDW:</label>
+              <input type="number" id="pdw" name="pdw" required>
+
+              <label for="abo">ABO Group:</label>
+              <input type="text" id="abo" name="abo" required>
+          </div>
+
+          <div class="form-row">
+              <label for="rh">Rh Factor:</label>
+              <input type="text" id="rh" name="rh" required>
+
+              <button type="submit" onclick="submitForm()">Submit</button>
+          </div>
+      </form>
+  </div>
+</div>
+
+<script>
+  function openPopup() {
+      document.getElementById('popupBox').style.display = 'block';
+  }
+
+  function closePopup() {
+      document.getElementById('popupBox').style.display = 'none';
+  }
+
+  window.onclick = function(event) {
+      if (event.target === document.getElementById('popupBox')) {
+          closePopup();
+      }
+  };
+
+  // Handle form submission
+  function submitForm(event) {
+      event.preventDefault(); // Prevent the default form submission
+
+      const token = sessionStorage.getItem("authToken");
+
+      if (!token) {
+          window.location.href = "../index.html"; // Redirect to login if no token
+          return;
+      }
+
+      const patientData = {
+          patientName: document.getElementById("patientName").value,
+          age: parseInt(document.getElementById("age").value),
+          gender: document.getElementById("gender").value,
+          refBy: document.getElementById("refBy").value,
+          regOn: document.getElementById("regOn").value,
+          uhid: parseInt(document.getElementById("uhid").value),
+          investigation: document.getElementById("investigation").value,
+          registeredOn: document.getElementById("registeredOn").value,
+          collectedOn: document.getElementById("collectedOn").value,
+          receivedOn: document.getElementById("receivedOn").value,
+          reportedOn: document.getElementById("reportedOn").value,
+          hemoglobin: parseFloat(document.getElementById("hemoglobin").value),
+          leukocyte: parseFloat(document.getElementById("leukocyte").value),
+          neutrophils: parseFloat(document.getElementById("neutrophils").value),
+          lymphocyte: parseFloat(document.getElementById("lymphocyte").value),
+          eosinophils: parseFloat(document.getElementById("eosinophils").value),
+          monocytes: parseFloat(document.getElementById("monocytes").value),
+          basophils: parseFloat(document.getElementById("basophils").value),
+          platelet: parseFloat(document.getElementById("platelet").value),
+          rbc: parseFloat(document.getElementById("rbc").value),
+          hct: parseFloat(document.getElementById("hct").value),
+          mcv: parseFloat(document.getElementById("mcv").value),
+          mch: parseFloat(document.getElementById("mch").value),
+          mchc: parseFloat(document.getElementById("mchc").value),
+          mpv: parseFloat(document.getElementById("mpv").value),
+          sd: parseFloat(document.getElementById("sd").value),
+          cv: parseFloat(document.getElementById("cv").value),
+          lcr: parseFloat(document.getElementById("lcr").value),
+          pdw: parseFloat(document.getElementById("pdw").value),
+          abo: document.getElementById("abo").value,
+          rh: document.getElementById("rh").value
+      };
+
+      fetch("http://localhost:8080/api/lab", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}`,
+                },
+                body: JSON.stringify(patientData),
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert("Data submitted successfully!");
+                console.log(data);
+            })
+            .catch(error => {
+                alert("An error occurred.");
+                console.error(error);
+            });
+        }
+    </script>
+
+   <!-- How It Works Section -->
+   <section class="how-it-works">
+    <div class="container">
+      <h2>How It Works</h2>
+      <p class="subtitle">Simplify your laboratory workflow in just three steps</p>
+      
+      <div class="steps">
+        <div class="step">
+          <img src="https://img.icons8.com/ios-filled/50/ffffff/doctor-male.png" alt="Add Patient Icon">
+          <h3>Add Patient</h3>
+          <p>Quickly input patient details into the system with ease.</p>
+        </div>
+        <div class="step">
+          <img src="https://img.icons8.com/ios-filled/50/ffffff/statistics-report.png" alt="Generate Report Icon">
+          <h3>Generate Report</h3>
+          <p>Generate accurate blood reports with a click of a button.</p>
+        </div>
+        <div class="step">
+          <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" alt="Send Report Icon">
+          <h3>Send via WhatsApp</h3>
+          <p>Instantly send reports directly to the patient’s WhatsApp.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="footer-container">
+      <!-- Quick Links -->
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      
+      <!-- Contact Information -->
+      <div class="footer-contact">
+        <h3>Contact Information</h3>
+        <p><strong>Phone:</strong> 123-456-7890</p>
+        <p><strong>Email:</strong> support@lab.com</p>
+        <p><strong>Address:</strong> 123 Lab St, City, Country</p>
+      </div>
+
+      <!-- Social Media Links -->
+      <div class="footer-social">
+        <h3>Follow Us</h3>
+        <ul>
+          <li><a href="#" class="social-link"><img src="https://img.icons8.com/ios/50/ffffff/whatsapp.png" alt="WhatsApp"></a></li>
+          <li><a href="#" class="social-link"><img src="https://img.icons8.com/ios/50/ffffff/facebook.png" alt="Facebook"></a></li>
+          <li><a href="#" class="social-link"><img src="https://img.icons8.com/ios/50/ffffff/linkedin.png" alt="LinkedIn"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p>&copy; 2024 Laboratory Services. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+
+
+</body>
+</html>
